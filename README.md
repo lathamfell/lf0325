@@ -5,7 +5,7 @@
 Note these instructions are for OSX / Linux, Windows may require different commands.
 
 Create a venv:
-`python3 -m ./venv`
+`python3 -m venv ./venv`
 
 Start the venv:
 `source ./venv/bin/activate`
@@ -45,15 +45,13 @@ Update the daily ladder charge:
 Fetch the following five transactions and check the results:
 
 Transaction for JAKR:
-`curl --location 'http://127.0.0.1:5000/transaction/submission?tool_code=JAKR&rental_day_count=5&discount_percent=101&check_out_date=2015-09-03' \
---data ''`
+`curl --location 'http://127.0.0.1:5000/transaction/submission?tool_code=JAKR&rental_day_count=5&discount_percent=101&check_out_date=2015-09-03'`
 
 Result:
 `Discount percent 101 is invalid, should be between 0 and 100`
 
 Transaction for LADW:
-`curl --location 'http://127.0.0.1:5000/transaction/submission?tool_code=LADW&rental_day_count=3&discount_percent=10&check_out_date=2020-07-02' \
---data ''`
+`curl --location 'http://127.0.0.1:5000/transaction/submission?tool_code=LADW&rental_day_count=3&discount_percent=10&check_out_date=2020-07-02'`
 
 Result:
 `{
@@ -72,8 +70,7 @@ Result:
 }`
 
 Transaction for CHNS:
-`curl --location 'http://127.0.0.1:5000/transaction/submission?tool_code=CHNS&rental_day_count=5&discount_percent=25&check_out_date=2015-07-02' \
---data ''`
+`curl --location 'http://127.0.0.1:5000/transaction/submission?tool_code=CHNS&rental_day_count=5&discount_percent=25&check_out_date=2015-07-02'`
 
 Result:
 `{
@@ -92,8 +89,7 @@ Result:
 }`
 
 Transaction for JAKD:
-`curl --location 'http://127.0.0.1:5000/transaction/submission?tool_code=JAKD&rental_day_count=6&discount_percent=0&check_out_date=2015-09-03' \
---data ''`
+`curl --location 'http://127.0.0.1:5000/transaction/submission?tool_code=JAKD&rental_day_count=6&discount_percent=0&check_out_date=2015-09-03'`
 
 Result:
 `
@@ -112,8 +108,7 @@ Result:
 }`
 
 Transaction for JAKR (second transaction):
-`curl --location 'http://127.0.0.1:5000/transaction/submission?tool_code=JAKR&rental_day_count=9&discount_percent=0&check_out_date=2015-07-02' \
---data ''`
+`curl --location 'http://127.0.0.1:5000/transaction/submission?tool_code=JAKR&rental_day_count=9&discount_percent=0&check_out_date=2015-07-02'`
 
 Result:
 `{
@@ -132,8 +127,7 @@ Result:
 }`
 
 Transaction for LADL:
-`curl --location 'http://127.0.0.1:5000/transaction/submission?tool_code=LADL&rental_day_count=4&discount_percent=50&check_out_date=2020-07-02' \
---data ''`
+`curl --location 'http://127.0.0.1:5000/transaction/submission?tool_code=LADL&rental_day_count=4&discount_percent=50&check_out_date=2020-07-02'`
 
 Result:
 `No tools with code LADL exist in database`
