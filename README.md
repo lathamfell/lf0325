@@ -135,3 +135,12 @@ Result:
 # mypy
 
 Run mypy to check types: `mypy handlers api.py tool.py`
+
+# stakeholder questions
+
+1. What is the scale, throughput and storage requirement for this app?
+1a. This is a prototype of the app to test out basic functionality.  Scale is limited to a few users, and throughput is small. Assume storage can easily fit on one hard drive.
+2. What about concurrency?
+2a. Concurrency should not be an issue due to the small scale of testing efforts for this app. There is no need for the database to be ACID compliant.
+3. Is there a maximum rental period?
+3a. There is no maximum rental period.
