@@ -3,7 +3,7 @@ from typing import Union
 from flask import Response
 from tinydb import Query, TinyDB
 
-from tool import Tool
+from handlers.tool import Tool
 
 
 class AddToolHandler:
@@ -22,6 +22,7 @@ class AddToolHandler:
         existing_tool = Query()
         db = TinyDB('tinydb.json')
         result = db.search(existing_tool.code == new_tool.code)
+        print(f"result inside handle: {result}")
         if not result:
             # save in db
             db.insert({'code': new_tool.code, 'type': new_tool.type, 'brand': new_tool.brand})

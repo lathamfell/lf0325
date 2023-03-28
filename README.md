@@ -138,17 +138,6 @@ Transaction for LADL:
 Result:
 `No tools with code LADL exist in database`
 
-
-considered creating Chainsaw, Ladder and Jackhammer classes to inherit from Tool
-
 # mypy
 
 Run mypy to check types: `mypy handlers api.py tool.py`
-
-# TODO
-tests
-comments
-
-# TODO after project is done
-Encapsulate Tool class attributes
-logger
