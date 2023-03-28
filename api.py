@@ -11,13 +11,13 @@ app = Flask(__name__)
 
 @app.route("/tool/add", methods=["POST"])
 def add_tool() -> Union[Response, str]:
-    assert isinstance(request.json, dict)
+    assert isinstance(request.json, dict)  # mypy necessity
     return AddToolHandler.handle(request.json)
 
 
 @app.route("/tool/update", methods=["PUT"])
 def update_tool() -> Union[Response, str]:
-    assert isinstance(request.json, dict)
+    assert isinstance(request.json, dict)  # mypy necessity
     return UpdateToolHandler.handle(request.json)
 
 

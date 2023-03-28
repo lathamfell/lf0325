@@ -1,3 +1,4 @@
+# initialize the prod db according to the specification
 rm tinydb.json;
 curl --location 'http://127.0.0.1:5000/tool/add' \
 --header 'Content-Type: application/json' \
