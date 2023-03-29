@@ -27,9 +27,9 @@ class TestTransactionHandler(unittest.TestCase):
               'check_out_date': '2015-09-03'
             },
             db_path="tinydb_test.json")
-        result = transaction_handler.handle()
-
-        self.assertEqual('400 BAD REQUEST', result.status)
+        self.assertRaises(
+            ValueError, transaction_handler.handle
+        )
 
         # teardown
         silent_remove('tinydb_test.json')
