@@ -2,8 +2,6 @@ import calendar
 
 from datetime import datetime, timedelta, date
 
-from flask import jsonify
-
 
 class TransactionCalculator:
 
@@ -61,7 +59,7 @@ class TransactionCalculator:
             "discount_amount": "${:,.2f}".format(self.discount_amount),
             "final_charge": "${:,.2f}".format(self.final_charge)
         }
-        return jsonify(data)
+        return data
 
     def _save_result_attributes(self):
         self.tool_type = self.db_tool[0]['type']

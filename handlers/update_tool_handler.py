@@ -6,13 +6,12 @@ from tinydb import Query, TinyDB
 
 class UpdateToolHandler:
 
-    def __init__(self):
-        pass
+    def __init__(self, db_path='tinydb.json'):
+        self.db_path = db_path
 
-    @staticmethod
-    def handle(request_json: dict) -> Union[Response, str]:
+    def handle(self, request_json: dict) -> Union[Response, str]:
         # check if in db
-        db = TinyDB('tinydb.json')
+        db = TinyDB(self.db_path)
         tool_type = request_json['type']
         existing_tool = Query()
         result = db.search(existing_tool.type == tool_type)

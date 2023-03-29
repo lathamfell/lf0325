@@ -8,11 +8,12 @@ from handlers.calculators.transaction_calculator import TransactionCalculator
 
 class TransactionHandler:
 
-    def __init__(self, request_args: dict) -> None:
+    def __init__(self, request_args: dict, db_path='tinydb_json') -> None:
         self.rental_day_count: int = int(request_args["rental_day_count"])
         self.discount_percent: int = int(request_args["discount_percent"])
         self.tool_code: str = request_args["tool_code"]
         self.check_out_date: str = request_args["check_out_date"]
+        self.db_path = db_path
 
     def handle(self):
 
@@ -24,7 +25,7 @@ class TransactionHandler:
                 status=400
             )
 
-        db = TinyDB('tinydb.json')
+        db = TinyDB(self.db_path)
         existing_tool = Query()
         db_tool = db.search(existing_tool.code == self.tool_code)
 
@@ -43,7 +44,7 @@ class TransactionHandler:
                 f"Discount percent {self.discount_percent} is invalid, should be between 0 and 100")
 
         # check if in db
-        db = TinyDB('tinydb.json')
+        db = TinyDB(self.db_path)
         existing_tool = Query()
         result = db.search(existing_tool.code == self.tool_code)
         if not result:
