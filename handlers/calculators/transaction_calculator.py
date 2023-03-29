@@ -8,13 +8,13 @@ from flask import jsonify
 class TransactionCalculator:
 
     def __init__(self,
-                 db_tool,
-                 rental_day_count,
-                 discount_percent,
-                 tool_code,
-                 check_out_date,
+                 db_tool: dict,
+                 rental_day_count: int,
+                 discount_percent: int,
+                 tool_code: str,
+                 check_out_date: str,
                  ):
-        self.db_tool = db_tool
+        self.db_tool: dict = db_tool
         self.rental_day_count: int = rental_day_count
         self.discount_percent: int = discount_percent
         self.tool_code: str = tool_code
@@ -26,7 +26,6 @@ class TransactionCalculator:
         self.charge_days: int
         self.check_out_date_dt: date
         self.due_date: str
-        self.db_tool: str
         self.tool_type: str
         self.tool_brand: str
         self.daily_charge: str

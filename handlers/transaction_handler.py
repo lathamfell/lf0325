@@ -8,7 +8,7 @@ from handlers.calculators.transaction_calculator import TransactionCalculator
 
 class TransactionHandler:
 
-    def __init__(self, request_args: dict) -> Dict[str, Any]:
+    def __init__(self, request_args: dict) -> None:
         self.rental_day_count: int = int(request_args["rental_day_count"])
         self.discount_percent: int = int(request_args["discount_percent"])
         self.tool_code: str = request_args["tool_code"]

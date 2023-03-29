@@ -134,7 +134,7 @@ Result:
 
 # mypy
 
-Run mypy to check types: `mypy handlers api.py tool.py`
+Run mypy to check types: `mypy handlers api.py`
 
 # stakeholder questions
 
