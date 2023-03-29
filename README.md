@@ -19,6 +19,8 @@ Install dependencies:
 Start the flask server:
 `flask --app api.py run`
 
+The flask server now takes over the current terminal. To continue, open a new terminal and ensure the venv is activated.
+
 Initialize the prod database:
 `./initialize_prod_db.sh`
 
@@ -133,6 +135,8 @@ Result:
 `No tools with code LADL exist in database`
 
 # tests
+
+Note these should be run inside an activated venv with all requirements installed
 
 `python3 -m unittest discover -s tests`
 

@@ -23,4 +23,11 @@ def update_tool() -> Union[Response, str]:
 
 @app.route("/transaction/submission", methods=["GET"])
 def submit_transaction() -> Response:
-    return jsonify(TransactionHandler(request.args).handle())
+    try:
+        return jsonify(TransactionHandler(request.args).handle())
+    except ValueError as exc:
+        return Response(
+            str(exc),
+            status=400
+        )
+

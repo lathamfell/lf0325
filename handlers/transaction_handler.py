@@ -8,7 +8,7 @@ from handlers.calculators.transaction_calculator import TransactionCalculator
 
 class TransactionHandler:
 
-    def __init__(self, request_args: dict, db_path='tinydb_json') -> None:
+    def __init__(self, request_args: dict, db_path='tinydb.json') -> None:
         self.rental_day_count: int = int(request_args["rental_day_count"])
         self.discount_percent: int = int(request_args["discount_percent"])
         self.tool_code: str = request_args["tool_code"]
@@ -20,10 +20,7 @@ class TransactionHandler:
         try:
             self._check_for_errors()
         except ValueError as exc:
-            return Response(
-                str(exc),
-                status=400
-            )
+            raise
 
         db = TinyDB(self.db_path)
         existing_tool = Query()
