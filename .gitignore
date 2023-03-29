@@ -130,6 +130,7 @@ dmypy.json
 
 # App specific
 tinydb.json
+tests/tinydb_test.json
 
 # IDE
 .idea/

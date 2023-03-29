@@ -132,6 +132,10 @@ Transaction for LADL:
 Result:
 `No tools with code LADL exist in database`
 
+# tests
+
+`python3 -m unittest discover -s tests`
+
 # mypy
 
 Run mypy to check types: `mypy handlers api.py`

@@ -8,11 +8,10 @@ from handlers.tool import Tool
 
 class AddToolHandler:
 
-    def __init__(self):
-        pass
+    def __init__(self, db_path='tinydb.json'):
+        self.db_path = db_path
 
-    @staticmethod
-    def handle(request_json: dict) -> Union[Response, str]:
+    def handle(self, request_json: dict, ) -> Union[Response, str]:
         # create tool obj
         new_tool = Tool()
         new_tool.type = request_json['type']
@@ -20,7 +19,7 @@ class AddToolHandler:
         new_tool.brand = request_json['brand']
         # check if code already in db
         existing_tool = Query()
-        db = TinyDB('tinydb.json')
+        db = TinyDB(self.db_path)
         result = db.search(existing_tool.code == new_tool.code)
 
         if not result:
